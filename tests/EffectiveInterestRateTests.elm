@@ -15,9 +15,14 @@ import Date
 import EffectiveInterestRate
 import Expect
 import List.Min2Items
-import ListUtils
 import Test
 import Time
+
+
+listProduct : List a -> List b -> List ( a, b )
+listProduct la lb =
+    List.map (\va -> List.map (\vb -> ( va, vb )) lb) la
+        |> List.concat
 
 
 earliestPaymentTest : Test.Test
@@ -514,7 +519,7 @@ effectiveInterestRateTest =
                         List.Min2Items.Min2Items
                             { amount = 240000, date = Date.fromCalendarDate 2015 Time.Jan 1 }
                             { amount = 0, date = Date.fromCalendarDate 2015 Time.Jan 1 }
-                            (ListUtils.product years months
+                            (listProduct years months
                                 |> List.map
                                     (\( year, month ) ->
                                         { amount = -1200, date = Date.fromCalendarDate year month 1 }
