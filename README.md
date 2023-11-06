@@ -68,7 +68,10 @@ Say :help for help and :exit to exit! More at <https://elm-lang.org/0.19.1/repl>
 { amount = 200, date = RD 736330 }
     : { amount : number, date : Date.Date }
 > paymentStream = List.Min2Items.Min2Items payment1 payment2 [ payment3, payment4 ]
-Min2Items { amount = -2000, date = RD 735599 } { amount = 1000, date = RD 735964 } [{ amount = 1000, date = RD 736330 },{ amount = 200, date = RD 736330 }]
+Min2Items
+    { amount = -2000, date = RD 735599 }
+    { amount = 1000, date = RD 735964 }
+    [{ amount = 1000, date = RD 736330 },{ amount = 200, date = RD 736330 }]
     : List.Min2Items.Min2Items { amount : number, date : Date.Date }
 > EffectiveInterestRate.effectiveInterestRate paymentStream
 Ok 0.06394102980498531 : Result String Float
