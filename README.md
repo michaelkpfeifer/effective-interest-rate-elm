@@ -39,7 +39,13 @@ For example
 ```
 represents an amount of -2000 transferred at Jan 01, 2015.
 
-A *payment stream* is a list of payments.
+A *payment stream* is a list of payments. Note that payment streams are implemented
+using the List.Min2Items type that is defined as follows:
+```elm
+type Min2Items a
+    = Min2Items a a (List a)
+```
+This implies that a payment stream must have at least two payments.
 
 ### Example
 
