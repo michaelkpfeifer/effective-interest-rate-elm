@@ -52,7 +52,7 @@ iterateTest =
                     Err err ->
                         Expect.equal "too many iterations" err
             )
-        , Test.test "finds a root of x^4 - 1 an accuracy of 1.0e-8 in 8 iterations"
+        , Test.test "finds a root of x^4 - 1 with an accuracy of 1.0e-8 in 8 iterations"
             (\_ ->
                 let
                     f : Float -> Float
